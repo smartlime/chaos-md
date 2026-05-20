@@ -1,0 +1,54 @@
+apiVersion: 1
+# По одному provider на папку с явным path и folder.
+# foldersFromFilesStructure не используем — он не дружит с пробелами и
+# вложенностью; провайдеры с пересекающимися path конфликтуют по UID.
+providers:
+  - name: chaos
+    orgId: 1
+    folder: ''
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 30
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/chaos
+
+  - name: ydb
+    orgId: 1
+    folder: 'YDB'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 30
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/YDB
+
+  - name: ydb-dist
+    orgId: 1
+    folder: 'YDB dist'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 30
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/YDB-dist
+
+  - name: chaoses
+    orgId: 1
+    folder: 'Chaoses'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 30
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/Chaoses
+
+  - name: node-exporter
+    orgId: 1
+    folder: 'Node Exporter'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 30
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/Node-Exporter
